@@ -1,0 +1,14 @@
+{
+  "name": "lia-pitch-deck",
+  "version": "1.0.0",
+  "description": "Investor Pitch Deck for Lia",
+  "scripts": {
+    "dev": "vite --open presentation.html",
+    "build": "node build.js",
+    "lint": "htmlhint presentation.html"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.0.0",
+    "vite": "^5.0.0"
+  }
+}
