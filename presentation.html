@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lia. — Investor Pitch Deck 2024</title>
+<meta name="description" content="Lia. investor pitch deck — the world's first flushable, biodegradable pregnancy test. Sustainable diagnostics for the modern world.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   IMPACT. DESIGN SYSTEM — Lia Pitch Deck
+   Swiss-graphic industrial · Orange accent · Grid-compartmental
+   ============================================================ */
+
+:root {
+  --color-accent:       #E84B0C;
+  --color-accent-dark:  #C23D08;
+  --color-ink:          #1A1A1A;
+  --color-ink-mid:      #3D3D3D;
+  --color-ink-muted:    #888888;
+  --color-surface:      #EBEBEB;
+  --color-card:         #FAFAFA;
+  --color-white:        #FFFFFF;
+  --color-border:       #1A1A1A;
+  --color-green:        #1D7A4A;
+
+  --font-display:  'Barlow Condensed', sans-serif;
+  --font-body:     'DM Sans', sans-serif;
+  --font-mono:     'DM Mono', monospace;
+
+  --text-display:  48px;
+  --text-xl:       36px;
+  --text-heading:  22px;
+  --text-subhead:  17px;
+  --text-label:    12px;
+  --text-body:     14px;
+  --text-micro:    11px;
+
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  --border-weight: 2px;
+  --radius-card:   14px;
+  --shadow-card:   0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.07);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+body {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(232,75,12,0.05) 0%, transparent 50%),
+    radial-gradient(circle at 85% 85%, rgba(26,26,26,0.04) 0%, transparent 50%);
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  min-height: 100vh;
+  padding: var(--space-6) 0 var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* ── Deck Header ────────────────────────────────────────── */
+.deck-meta {
+  width: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-1);
+}
+
+.deck-meta__brand {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.deck-meta__brand .period { color: var(--color-accent); }
+
+.deck-meta__label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--color-ink-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Slide Card ─────────────────────────────────────────── */
+.slide-card {
+  width: 800px;
+  height: 500px;
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Slide Header Bar ───────────────────────────────────── */
+.slide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-white);
+  border-bottom: var(--border-weight) solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.slide-header__brand {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+
+.slide-header__brand .period { color: var(--color-accent); }
+
+.slide-header__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.slide-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--color-ink-muted);
+  letter-spacing: 0.1em;
+}
+
+.slide-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.slide-tag--dark {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.slide-tag--outline {
+  border: 1px solid rgba(26,26,26,0.25);
+  color: var(--color-ink-mid);
+  background: transparent;
+}
+
+/* ── Slide Body ─────────────────────────────────────────── */
+.slide-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* ── Hatch Panel ────────────────────────────────────────── */
+.hatch-panel {
+  background-color: var(--color-accent);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(0,0,0,0.50) 4px,
+    rgba(0,0,0,0.50) 6px
+  );
+}
+
+/* ── Score Block ────────────────────────────────────────── */
+.score-value {
+  font-family: var(--font-body);
+  font-size: var(--text-display);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.score-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ── Knob ───────────────────────────────────────────────── */
+.knob {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 35%, rgba(255,255,255,0.85) 0%, transparent 55%),
+    conic-gradient(from 0deg,
+      #c0c0c0 0deg, #f0f0f0 40deg, #e0e0e0 80deg,
+      #ffffff 100deg, #b8b8b8 130deg, #d8d8d8 160deg,
+      #f5f5f5 200deg, #e5e5e5 240deg, #cccccc 280deg,
+      #f0f0f0 320deg, #c0c0c0 360deg
+    );
+  box-shadow:
+    0 3px 12px rgba(0,0,0,0.28),
+    0 1px 4px rgba(0,0,0,0.15),
+    inset 0 1px 2px rgba(255,255,255,0.9),
+    inset 0 -1px 2px rgba(0,0,0,0.1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.knob::after {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(100,100,100,0.5);
+  transform: translate(-50%,-50%);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ── Metric Pill ────────────────────────────────────────── */
+.metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-3) var(--space-4);
+}
+
+.metric-pill__value {
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.metric-pill__accent { color: var(--color-accent); }
+
+.metric-pill__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+.metric-pill__divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(26,26,26,0.12);
+}
+
+/* ── Progress Bar ───────────────────────────────────────── */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(26,26,26,0.1);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 1px;
+}
+
+.progress-bar__fill--green { background: var(--color-green); }
+.progress-bar__fill--dark { background: var(--color-ink); }
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.progress-row__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  width: 56px;
+  flex-shrink: 0;
+}
+
+.progress-row__bar { flex: 1; }
+
+.progress-row__pct {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-mid);
+  width: 34px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* ── Data Table ─────────────────────────────────────────── */
+.data-table {
+  width: 100%;
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table__row {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+  background: var(--color-card);
+}
+
+.data-table__row:last-child { border-bottom: none; }
+.data-table__row:hover { background: rgba(232,75,12,0.04); }
+
+.data-table__row--header {
+  background: var(--color-ink);
+  padding: var(--space-2) var(--space-4);
+}
+
+.data-table__row--header:hover { background: var(--color-ink); }
+
+.data-table__cell {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--color-ink-mid);
+  flex: 1;
+}
+
+.data-table__header-cell {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex: 1;
+}
+
+.data-table__header-cell--right { text-align: right; }
+.data-table__cell--right { text-align: right; }
+.data-table__cell--accent { color: var(--color-accent); font-weight: 700; }
+.data-table__cell--green { color: var(--color-green); font-weight: 700; }
+.data-table__cell--bold { font-weight: 700; color: var(--color-ink); }
+.data-table__cell--mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.data-table__cell--check { color: var(--color-green); font-weight: 700; font-size: 16px; }
+.data-table__cell--cross { color: #cc2222; font-weight: 700; font-size: 16px; }
+.data-table__cell--partial { color: var(--color-ink-muted); font-weight: 500; font-size: 14px; }
+
+/* ── Callout ────────────────────────────────────────────── */
+.callout {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+}
+
+.callout--accent {
+  border-color: var(--color-accent);
+  border-left-width: 4px;
+}
+
+.callout--dark {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.callout__icon {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.callout__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 3px;
+}
+
+.callout--dark .callout__title { color: var(--color-white); }
+
+.callout__body {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-ink-muted);
+  line-height: 1.5;
+}
+
+.callout--dark .callout__body { color: rgba(255,255,255,0.55); }
+
+/* ── Utility ────────────────────────────────────────────── */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.divider-h {
+  width: 100%;
+  height: 1px;
+  background: rgba(26,26,26,0.10);
+}
+
+.divider-v {
+  width: 1px;
+  background: var(--color-border);
+  align-self: stretch;
+}
+
+/* ── Print ──────────────────────────────────────────────── */
+@media print {
+  body {
+    background: none !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+  .deck-meta { display: none !important; }
+  .slide-card {
+    width: 100% !important;
+    height: 100vh !important;
+    page-break-after: always;
+    break-after: page;
+    box-shadow: none !important;
+    border: 2px solid #000 !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Deck Header -->
+<div class="deck-meta">
+  <div class="deck-meta__brand">Lia<span class="period">.</span></div>
+  <div class="deck-meta__label">Investor Pitch Deck · Series A · 2024</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 1 — Title / Vision
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-01">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="mono-label">Sustainable Diagnostics</span>
+      <span class="slide-num">01 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <!-- Left: hatch accent -->
+    <div style="width:8px; flex-shrink:0;" class="hatch-panel"></div>
+
+    <!-- Center: Main content -->
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; padding: var(--space-7) var(--space-7);">
+      <div class="mono-label" style="margin-bottom: var(--space-3); color: var(--color-accent);">Redefining home diagnostics</div>
+      <div style="font-family: var(--font-display); font-size: 74px; font-weight:700; color: var(--color-ink); letter-spacing:-3px; line-height:0.92; margin-bottom: var(--space-5);">
+        THE LAST<br>TEST YOU'LL<br>EVER FLUSH<span style="color:var(--color-accent)">.</span>
+      </div>
+      <div style="font-family: var(--font-body); font-size: 15px; color: var(--color-ink-muted); max-width: 360px; line-height:1.6;">
+        Lia. is the world's first flushable, biodegradable home pregnancy test — built from plant fibres, 99%+ accurate, and completely private.
+      </div>
+    </div>
+
+    <!-- Right: stats cluster -->
+    <div style="width:220px; flex-shrink:0; border-left: var(--border-weight) solid var(--color-border); display:flex; flex-direction:column;">
+      <div style="flex:1; background: var(--color-accent); display:flex; flex-direction:column; align-items:center; justify-content:center; gap: var(--space-2); padding: var(--space-5);">
+        <div style="display:flex; align-items:center; gap: var(--space-3); margin-bottom: var(--space-2);">
+          <div class="knob"></div>
+        </div>
+        <div class="score-value">99<span style="font-size:28px; letter-spacing:0;">%+</span></div>
+        <div class="score-label">Accuracy</div>
+      </div>
+      <div style="border-top: var(--border-weight) solid var(--color-border); padding: var(--space-4);">
+        <div class="mono-label" style="margin-bottom: var(--space-2);">Market size</div>
+        <div style="font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--color-ink);">$900<span style="font-size:14px; color: var(--color-ink-muted); font-weight:400;">M</span></div>
+        <div class="mono-label" style="margin-top: 2px;">Global TAM · Growing</div>
+      </div>
+      <div style="border-top: var(--border-weight) solid var(--color-border); padding: var(--space-4);">
+        <div class="mono-label" style="margin-bottom: var(--space-2);">Founded</div>
+        <div style="font-family: var(--font-body); font-size: 22px; font-weight: 700; color: var(--color-ink);">2015</div>
+        <div class="mono-label" style="margin-top: 2px;">Philadelphia, PA</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 2 — The Problem
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-02">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag--outline">The Problem</span>
+      <span class="slide-num">02 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <!-- Left sidebar: hatch + accent label -->
+    <div style="width:220px; flex-shrink:0; border-right: var(--border-weight) solid var(--color-border); display:flex; flex-direction:column;">
+      <div class="hatch-panel" style="flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding: var(--space-5);">
+        <div style="font-family: var(--font-display); font-size: 56px; font-weight:700; color: var(--color-white); line-height:0.9; letter-spacing:-2px;">30<br>YRS</div>
+        <div style="font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em; margin-top: var(--space-2);">No innovation</div>
+      </div>
+      <div style="padding: var(--space-4); background: var(--color-white); border-top: var(--border-weight) solid var(--color-border);">
+        <div class="mono-label" style="margin-bottom: var(--space-1);">Annual plastic waste</div>
+        <div style="font-family: var(--font-body); font-size: 18px; font-weight:700; color:var(--color-accent);">600M+</div>
+        <div class="mono-label">Tests landfilled/yr</div>
+      </div>
+    </div>
+
+    <!-- Right: Problem details -->
+    <div style="flex:1; padding: var(--space-6); display:flex; flex-direction:column; justify-content:center; gap: var(--space-4);">
+      <div>
+        <div style="font-family: var(--font-display); font-size: 32px; font-weight:700; color: var(--color-ink); letter-spacing:-1px; margin-bottom: var(--space-3);">Home diagnostics haven't<br>changed since 1988<span style="color:var(--color-accent)">.</span></div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap: var(--space-3);">
+        <div class="callout callout--accent" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon">🗑</div>
+          <div>
+            <div class="callout__title">Non-biodegradable plastic</div>
+            <div class="callout__body">Every test sold is a chunk of ABS plastic that takes 400+ years to decompose in landfill.</div>
+          </div>
+        </div>
+        <div class="callout" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon" style="color:var(--color-ink-muted);">👁</div>
+          <div>
+            <div class="callout__title">Zero privacy</div>
+            <div class="callout__body">Used tests can't be flushed — they must be hidden in trash, violating users' privacy at a deeply personal moment.</div>
+          </div>
+        </div>
+        <div class="callout" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon" style="color:var(--color-ink-muted);">⏸</div>
+          <div>
+            <div class="callout__title">Category stagnation</div>
+            <div class="callout__body">The $900M market has seen no material innovation in product design, materials, or disposal in over three decades.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 3 — The Solution
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-03">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag">The Solution</span>
+      <span class="slide-num">03 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <!-- Left: score block -->
+    <div style="width:200px; flex-shrink:0; border-right: var(--border-weight) solid var(--color-border); background: var(--color-accent); display:flex; flex-direction:column; align-items:center; justify-content:center; gap: var(--space-4); padding: var(--space-5);">
+      <div style="text-align:center;">
+        <div class="score-value" style="font-size:56px;">99<span style="font-size:24px;">%+</span></div>
+        <div class="score-label" style="margin-top: var(--space-1);">Accuracy</div>
+      </div>
+      <div style="width:100%; height:1px; background: rgba(255,255,255,0.2);"></div>
+      <div style="text-align:center;">
+        <div class="score-value" style="font-size:40px;">60s</div>
+        <div class="score-label">Disperses in water</div>
+      </div>
+      <div style="width:100%; height:1px; background: rgba(255,255,255,0.2);"></div>
+      <div style="text-align:center;">
+        <div class="score-value" style="font-size:40px;">FDA</div>
+        <div class="score-label">510(k) Cleared</div>
+      </div>
+    </div>
+
+    <!-- Right: Solution narrative -->
+    <div style="flex:1; display:flex; flex-direction:column; padding: var(--space-6);">
+      <div style="font-family: var(--font-display); font-size: 34px; font-weight:700; color: var(--color-ink); letter-spacing:-1px; margin-bottom: var(--space-5);">A pregnancy test<br>you can simply flush<span style="color:var(--color-accent)">.</span></div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap: var(--space-3); flex:1;">
+        <div style="padding: var(--space-4); border: var(--border-weight) solid var(--color-border); border-radius:8px; background: var(--color-white);">
+          <div class="mono-label" style="margin-bottom: var(--space-2); color: var(--color-accent);">Material</div>
+          <div style="font-family: var(--font-body); font-size:14px; font-weight:700; color:var(--color-ink); margin-bottom:4px;">Plant-fibre paper</div>
+          <div style="font-family: var(--font-body); font-size:12px; color:var(--color-ink-muted); line-height:1.5;">Same tech as toilet paper. Fully disperses in water within 60 seconds. Zero plastic.</div>
+        </div>
+        <div style="padding: var(--space-4); border: var(--border-weight) solid var(--color-border); border-radius:8px; background: var(--color-white);">
+          <div class="mono-label" style="margin-bottom: var(--space-2); color: var(--color-accent);">Privacy</div>
+          <div style="font-family: var(--font-body); font-size:14px; font-weight:700; color:var(--color-ink); margin-bottom:4px;">Completely flushable</div>
+          <div style="font-family: var(--font-body); font-size:12px; color:var(--color-ink-muted); line-height:1.5;">No hiding in trash. Results read in 3 minutes, then it simply disappears.</div>
+        </div>
+        <div style="padding: var(--space-4); border: var(--border-weight) solid var(--color-border); border-radius:8px; background: var(--color-white);">
+          <div class="mono-label" style="margin-bottom: var(--space-2); color: var(--color-accent);">Accuracy</div>
+          <div style="font-family: var(--font-body); font-size:14px; font-weight:700; color:var(--color-ink); margin-bottom:4px;">99%+ sensitivity</div>
+          <div style="font-family: var(--font-body); font-size:12px; color:var(--color-ink-muted); line-height:1.5;">Clinically validated lateral flow immunoassay. Matches leading plastic tests.</div>
+        </div>
+        <div style="padding: var(--space-4); border: var(--border-weight) solid var(--color-border); border-radius:8px; background: var(--color-white);">
+          <div class="mono-label" style="margin-bottom: var(--space-2); color: var(--color-accent);">Sustainability</div>
+          <div style="font-family: var(--font-body); font-size:14px; font-weight:700; color:var(--color-ink); margin-bottom:4px;">100% biodegradable</div>
+          <div style="font-family: var(--font-body); font-size:12px; color:var(--color-ink-muted); line-height:1.5;">No plastic components. Compostable packaging. Carbon footprint &lt;10% of traditional tests.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 4 — Market Opportunity
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-04">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag--outline">Market</span>
+      <span class="slide-num">04 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <div style="flex:1; display:flex; flex-direction:column; padding: var(--space-6);">
+      <div style="font-family: var(--font-display); font-size: 30px; font-weight:700; color: var(--color-ink); letter-spacing:-1px; margin-bottom: var(--space-5);">A $900M market ready to move<span style="color:var(--color-accent)">.</span></div>
+
+      <!-- Metric pills row -->
+      <div style="display:flex; gap: var(--space-3); margin-bottom: var(--space-5);">
+        <div class="metric-pill" style="flex:1;">
+          <div>
+            <div class="metric-pill__value">$900<span class="metric-pill__accent">M</span></div>
+            <div class="metric-pill__label">TAM<br>Global HPT market</div>
+          </div>
+          <div class="metric-pill__divider"></div>
+          <div>
+            <div class="mono-label">2024 est.</div>
+          </div>
+        </div>
+        <div class="metric-pill" style="flex:1;">
+          <div>
+            <div class="metric-pill__value">$310<span class="metric-pill__accent">M</span></div>
+            <div class="metric-pill__label">SAM<br>North America</div>
+          </div>
+          <div class="metric-pill__divider"></div>
+          <div>
+            <div class="mono-label">Addressable</div>
+          </div>
+        </div>
+        <div class="metric-pill" style="flex:1;">
+          <div>
+            <div class="metric-pill__value">$38<span class="metric-pill__accent">M</span></div>
+            <div class="metric-pill__label">SOM<br>5-yr target</div>
+          </div>
+          <div class="metric-pill__divider"></div>
+          <div>
+            <div class="mono-label">Obtainable</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segment breakdown -->
+      <div style="display:flex; flex-direction:column; gap: var(--space-3);">
+        <div class="mono-label" style="margin-bottom: var(--space-1);">Target customer segments</div>
+        <div class="progress-row">
+          <div class="progress-row__label">Eco-first</div>
+          <div class="progress-row__bar">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width:72%;"></div></div>
+          </div>
+          <div class="progress-row__pct">72%</div>
+        </div>
+        <div class="progress-row">
+          <div class="progress-row__label">Privacy</div>
+          <div class="progress-row__bar">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width:58%;"></div></div>
+          </div>
+          <div class="progress-row__pct">58%</div>
+        </div>
+        <div class="progress-row">
+          <div class="progress-row__label">DTC/Sub</div>
+          <div class="progress-row__bar">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width:41%;"></div></div>
+          </div>
+          <div class="progress-row__pct">41%</div>
+        </div>
+        <div class="progress-row">
+          <div class="progress-row__label">Clinical</div>
+          <div class="progress-row__bar">
+            <div class="progress-bar"><div class="progress-bar__fill" style="width:24%;"></div></div>
+          </div>
+          <div class="progress-row__pct">24%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right sidebar: CAGR + note -->
+    <div style="width:190px; flex-shrink:0; border-left: var(--border-weight) solid var(--color-border); display:flex; flex-direction:column;">
+      <div style="flex:1; background: var(--color-ink); display:flex; flex-direction:column; align-items:center; justify-content:center; gap: var(--space-2); padding: var(--space-5);">
+        <div class="mono-label" style="color: rgba(255,255,255,0.5); text-align:center;">Market CAGR</div>
+        <div style="font-family: var(--font-display); font-size: 56px; font-weight:700; color: var(--color-accent); line-height:1; letter-spacing:-2px;">7.2<span style="font-size:28px;">%</span></div>
+        <div class="mono-label" style="color: rgba(255,255,255,0.5); text-align:center;">2024 – 2030<br>projected</div>
+      </div>
+      <div style="padding: var(--space-4); background: var(--color-white); border-top: var(--border-weight) solid var(--color-border);">
+        <div class="mono-label" style="margin-bottom: var(--space-2);">Sustainability premium</div>
+        <div style="font-family: var(--font-body); font-size:13px; font-weight:700; color:var(--color-ink);">+22% WTP</div>
+        <div style="font-family: var(--font-body); font-size:11px; color:var(--color-ink-muted); margin-top:2px;">vs. conventional brands</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 5 — Business Model
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-05">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag--dark">Business Model</span>
+      <span class="slide-num">05 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <div style="flex:1; display:flex; flex-direction:column; padding: var(--space-5);">
+      <div style="font-family: var(--font-display); font-size: 28px; font-weight:700; color: var(--color-ink); letter-spacing:-1px; margin-bottom: var(--space-4);">Unit economics & channel mix<span style="color:var(--color-accent)">.</span></div>
+
+      <div class="data-table" style="margin-bottom: var(--space-4);">
+        <div class="data-table__row data-table__row--header">
+          <div class="data-table__header-cell" style="flex:2;">Metric</div>
+          <div class="data-table__header-cell data-table__header-cell--right">DTC Online</div>
+          <div class="data-table__header-cell data-table__header-cell--right">Retail</div>
+          <div class="data-table__header-cell data-table__header-cell--right">Clinical</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Unit price (MSRP)</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--bold">$18.99</div>
+          <div class="data-table__cell data-table__cell--right">$14.99</div>
+          <div class="data-table__cell data-table__cell--right">$11.50</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">COGS</div>
+          <div class="data-table__cell data-table__cell--right">$4.20</div>
+          <div class="data-table__cell data-table__cell--right">$4.20</div>
+          <div class="data-table__cell data-table__cell--right">$4.20</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Gross margin</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--accent">78%</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--green">52%</div>
+          <div class="data-table__cell data-table__cell--right">37%</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Channel share (Y3 target)</div>
+          <div class="data-table__cell data-table__cell--right">45%</div>
+          <div class="data-table__cell data-table__cell--right">40%</div>
+          <div class="data-table__cell data-table__cell--right">15%</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap: var(--space-3);">
+        <div style="flex:1; padding: var(--space-4); border: var(--border-weight) solid var(--color-border); border-radius:8px;">
+          <div class="mono-label" style="margin-bottom: var(--space-2);">Revenue streams</div>
+          <div style="display:flex; flex-direction:column; gap: var(--space-2); font-size:13px;">
+            <div style="display:flex; justify-content:space-between;"><span style="color:var(--color-ink-muted);">→ Single-unit DTC</span><span style="font-weight:700;">$18.99</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:var(--color-ink-muted);">→ 2-pack DTC</span><span style="font-weight:700;">$29.99</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:var(--color-ink-muted);">→ Retail (CVS/Walgreens)</span><span style="font-weight:700;">$14.99</span></div>
+            <div style="display:flex; justify-content:space-between;"><span style="color:var(--color-ink-muted);">→ Subscription bundle</span><span style="font-weight:700;">$12/mo</span></div>
+          </div>
+        </div>
+        <div style="flex:1; padding: var(--space-4); border: var(--border-weight) solid var(--color-border); border-radius:8px; background:var(--color-accent);">
+          <div style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em; margin-bottom: var(--space-2);">Blended gross margin target</div>
+          <div style="font-family:var(--font-display); font-size:52px; font-weight:700; color:var(--color-white); line-height:1; letter-spacing:-2px;">62<span style="font-size:28px;">%</span></div>
+          <div style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.08em; margin-top: var(--space-2);">Year 3 blended · Scale-adjusted</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 6 — Technology & Traction
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-06">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag">Technology &amp; Traction</span>
+      <span class="slide-num">06 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <!-- Left column: IP + Patents -->
+    <div style="width:280px; flex-shrink:0; border-right: var(--border-weight) solid var(--color-border); display:flex; flex-direction:column; padding: var(--space-5); gap: var(--space-3);">
+      <div class="mono-label" style="margin-bottom: var(--space-1);">Intellectual property</div>
+      
+      <div class="metric-pill" style="width:100%;">
+        <div style="flex:1;">
+          <div class="metric-pill__value">8</div>
+          <div class="metric-pill__label">Patents<br>Granted &amp; Pending</div>
+        </div>
+        <div class="metric-pill__divider"></div>
+        <div style="font-family:var(--font-mono); font-size:10px; color:var(--color-accent);">IP</div>
+      </div>
+
+      <div class="metric-pill" style="width:100%;">
+        <div style="flex:1;">
+          <div class="metric-pill__value">3</div>
+          <div class="metric-pill__label">Utility Patents<br>Core technology</div>
+        </div>
+        <div class="metric-pill__divider"></div>
+        <div style="font-family:var(--font-mono); font-size:10px; color:var(--color-accent);">UTIL</div>
+      </div>
+
+      <div style="padding: var(--space-4); border: var(--border-weight) solid var(--color-accent); border-left-width:4px; border-radius:8px; background: rgba(232,75,12,0.04);">
+        <div style="font-family:var(--font-body); font-size:13px; font-weight:700; color:var(--color-ink); margin-bottom:3px;">FDA 510(k) Cleared</div>
+        <div style="font-family:var(--font-body); font-size:12px; color:var(--color-ink-muted); line-height:1.5;">De Novo cleared for OTC use. Full regulatory pathway complete — no additional FDA burden for US commercialization.</div>
+      </div>
+
+      <div style="margin-top: auto; padding: var(--space-3); background: var(--color-ink); border-radius:6px;">
+        <div style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:4px;">Material IP</div>
+        <div style="font-family:var(--font-body); font-size:12px; color:var(--color-white);">Proprietary nitrocellulose-fibre composite. Flushability certified to ISO 16619.</div>
+      </div>
+    </div>
+
+    <!-- Right column: Traction milestones -->
+    <div style="flex:1; display:flex; flex-direction:column; padding: var(--space-5); gap: var(--space-3);">
+      <div class="mono-label">Milestones &amp; traction</div>
+
+      <div style="display:flex; flex-direction:column; gap: var(--space-3);">
+        <div class="callout callout--accent" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon">🏆</div>
+          <div>
+            <div class="callout__title">TechCrunch Disrupt Berlin 2017 — Winner</div>
+            <div class="callout__body">Live dispersibility demo on stage. Beat 1,500+ applicants. International press coverage across 40+ outlets.</div>
+          </div>
+        </div>
+        <div class="callout" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon" style="color:var(--color-ink-muted);">📦</div>
+          <div>
+            <div class="callout__title">CVS &amp; Walmart shelf placement</div>
+            <div class="callout__body">Listed in 2,400+ retail locations nationally. Top-10 HPT SKU in eco-health segment within 6 months of launch.</div>
+          </div>
+        </div>
+        <div class="callout" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon" style="color:var(--color-ink-muted);">💬</div>
+          <div>
+            <div class="callout__title">NPS of 72 — industry-leading</div>
+            <div class="callout__body">4.7★ average rating across 12,000+ verified reviews. 68% of customers report choosing Lia specifically for privacy.</div>
+          </div>
+        </div>
+        <div class="callout" style="padding: var(--space-3) var(--space-4);">
+          <div class="callout__icon" style="color:var(--color-ink-muted);">🌱</div>
+          <div>
+            <div class="callout__title">Expanding to ovulation &amp; STI panels</div>
+            <div class="callout__body">Paper-based diagnostics platform extends naturally. Ovulation test in clinical validation. STI panel patent pending.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 7 — Competitive Matrix
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-07">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag--outline" style="font-family:var(--font-mono); font-size:var(--text-micro); letter-spacing:0.08em; text-transform:uppercase; padding:3px 8px; border-radius:3px; border:1px solid rgba(26,26,26,0.25); color:var(--color-ink-mid);">Competition</span>
+      <span class="slide-num">07 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <div style="flex:1; display:flex; flex-direction:column; padding: var(--space-5);">
+      <div style="font-family: var(--font-display); font-size: 28px; font-weight:700; color: var(--color-ink); letter-spacing:-1px; margin-bottom: var(--space-4);">Lia. wins where it matters<span style="color:var(--color-accent)">.</span></div>
+
+      <div class="data-table">
+        <div class="data-table__row data-table__row--header">
+          <div class="data-table__header-cell" style="flex:2;">Feature</div>
+          <div class="data-table__header-cell data-table__header-cell--right" style="color: var(--color-accent);">Lia.</div>
+          <div class="data-table__header-cell data-table__header-cell--right">ClearBlue</div>
+          <div class="data-table__header-cell data-table__header-cell--right">First Response</div>
+          <div class="data-table__header-cell data-table__header-cell--right">Generic</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Flushable</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Biodegradable</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">99%+ accuracy</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--partial">~</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">FDA Cleared</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--partial">~</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Patented IP moat</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">DTC / subscription</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--check">✓</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--cross">✗</div>
+        </div>
+        <div class="data-table__row">
+          <div class="data-table__cell data-table__cell--mono" style="flex:2;">Retail price</div>
+          <div class="data-table__cell data-table__cell--right data-table__cell--bold">$14.99</div>
+          <div class="data-table__cell data-table__cell--right">$18.99</div>
+          <div class="data-table__cell data-table__cell--right">$16.99</div>
+          <div class="data-table__cell data-table__cell--right">$6.99</div>
+        </div>
+      </div>
+
+      <div style="margin-top: var(--space-4); padding: var(--space-3) var(--space-4); background: rgba(232,75,12,0.06); border-radius:6px; border-left: 4px solid var(--color-accent);">
+        <div style="font-family:var(--font-body); font-size:13px; color:var(--color-ink);">
+          <strong>Conclusion:</strong> Lia. is the only product that is simultaneously FDA-cleared, flushable, biodegradable, and competitively priced. No competitor can replicate this without our patented fibre technology and multi-year regulatory lead.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SLIDE 8 — Team & Capital Ask
+     ══════════════════════════════════════════════════════════ -->
+<div class="slide-card" id="slide-08">
+  <div class="slide-header">
+    <div class="slide-header__brand">Lia<span class="period">.</span></div>
+    <div class="slide-header__meta">
+      <span class="slide-tag">Team &amp; The Ask</span>
+      <span class="slide-num">08 / 08</span>
+    </div>
+  </div>
+
+  <div class="slide-body">
+    <!-- Left: Team -->
+    <div style="flex:1; padding: var(--space-5); display:flex; flex-direction:column; gap: var(--space-3);">
+      <div class="mono-label" style="margin-bottom: var(--space-1);">Leadership team</div>
+
+      <div style="display:flex; flex-direction:column; gap: var(--space-3);">
+        <div style="display:flex; gap: var(--space-4); align-items:flex-start; padding: var(--space-3); border: var(--border-weight) solid var(--color-border); border-radius:8px; background:var(--color-white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--color-accent); flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--color-white);">A</span>
+          </div>
+          <div>
+            <div style="font-family:var(--font-body); font-size:14px; font-weight:700; color:var(--color-ink);">Anna Courey — Co-Founder &amp; CEO</div>
+            <div style="font-family:var(--font-mono); font-size:10px; color:var(--color-ink-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px;">Penn Wharton MBA · Former P&amp;G R&amp;D</div>
+            <div style="font-family:var(--font-body); font-size:12px; color:var(--color-ink-muted);">Consumer goods commercialisation and healthcare regulatory strategy.</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: var(--space-4); align-items:flex-start; padding: var(--space-3); border: var(--border-weight) solid var(--color-border); border-radius:8px; background:var(--color-white);">
+          <div style="width:40px; height:40px; border-radius:50%; background:var(--color-ink); flex-shrink:0; display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:var(--font-display); font-size:20px; font-weight:700; color:var(--color-white);">D</span>
+          </div>
+          <div>
+            <div style="font-family:var(--font-body); font-size:14px; font-weight:700; color:var(--color-ink);">Darby Saxbe — Co-Founder &amp; CTO</div>
+            <div style="font-family:var(--font-mono); font-size:10px; color:var(--color-ink-muted); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:3px;">PhD Biochemistry, USC · 6 patents</div>
+            <div style="font-family:var(--font-body); font-size:12px; color:var(--color-ink-muted);">Paper-based lateral flow diagnostic chemistry and ISO-certified manufacturing.</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap: var(--space-3); flex-wrap:wrap;">
+          <div style="padding: var(--space-2) var(--space-3); border: 1px solid rgba(26,26,26,0.15); border-radius:4px; background:var(--color-surface);">
+            <div style="font-family:var(--font-mono); font-size:10px; color:var(--color-ink-muted); text-transform:uppercase;">Advisors</div>
+            <div style="font-family:var(--font-body); font-size:12px; font-weight:700; color:var(--color-ink);">Dr. Sarah Igo — FDA Policy</div>
+          </div>
+          <div style="padding: var(--space-2) var(--space-3); border: 1px solid rgba(26,26,26,0.15); border-radius:4px; background:var(--color-surface);">
+            <div style="font-family:var(--font-mono); font-size:10px; color:var(--color-ink-muted); text-transform:uppercase;">Advisors</div>
+            <div style="font-family:var(--font-body); font-size:12px; font-weight:700; color:var(--color-ink);">Mark Borden — Retail Strategy</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Capital ask -->
+    <div style="width:240px; flex-shrink:0; border-left: var(--border-weight) solid var(--color-border); display:flex; flex-direction:column;">
+      <div style="flex:1; background: var(--color-accent); padding: var(--space-5); display:flex; flex-direction:column; justify-content:center; gap: var(--space-3);">
+        <div style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.1em;">Series A Raise</div>
+        <div style="font-family: var(--font-display); font-size: 52px; font-weight:700; color:var(--color-white); line-height:1; letter-spacing:-2px;">$8M</div>
+
+        <div style="width:100%; height:1px; background: rgba(255,255,255,0.2);"></div>
+
+        <div style="display:flex; flex-direction:column; gap: var(--space-2);">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.7); text-transform:uppercase;">Raised to date</span>
+            <span style="font-family:var(--font-body); font-size:13px; font-weight:700; color:var(--color-white);">$2.4M</span>
+          </div>
+          <div class="progress-bar" style="background: rgba(255,255,255,0.2);">
+            <div class="progress-bar__fill" style="width:30%; background:var(--color-white);"></div>
+          </div>
+          <div style="font-family:var(--font-mono); font-size:10px; color:rgba(255,255,255,0.6);">30% committed</div>
+        </div>
+      </div>
+
+      <div style="padding: var(--space-4); border-top: var(--border-weight) solid var(--color-border); background:var(--color-white);">
+        <div class="mono-label" style="margin-bottom: var(--space-3);">Use of funds</div>
+        <div style="display:flex; flex-direction:column; gap: var(--space-2);">
+          <div class="progress-row">
+            <div class="progress-row__label">Mfg</div>
+            <div class="progress-row__bar">
+              <div class="progress-bar"><div class="progress-bar__fill" style="width:40%;"></div></div>
+            </div>
+            <div class="progress-row__pct">40%</div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-row__label">Sales</div>
+            <div class="progress-row__bar">
+              <div class="progress-bar"><div class="progress-bar__fill" style="width:30%;"></div></div>
+            </div>
+            <div class="progress-row__pct">30%</div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-row__label">R&amp;D</div>
+            <div class="progress-row__bar">
+              <div class="progress-bar"><div class="progress-bar__fill" style="width:20%;"></div></div>
+            </div>
+            <div class="progress-row__pct">20%</div>
+          </div>
+          <div class="progress-row">
+            <div class="progress-row__label">Ops</div>
+            <div class="progress-row__bar">
+              <div class="progress-bar"><div class="progress-bar__fill" style="width:10%;"></div></div>
+            </div>
+            <div class="progress-row__pct">10%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Deck Footer -->
+<div style="width:800px; display:flex; justify-content:space-between; padding: 0 var(--space-1);">
+  <div style="font-family:var(--font-mono); font-size:var(--text-micro); color:var(--color-ink-muted);">Confidential · For accredited investors only</div>
+  <div style="font-family:var(--font-mono); font-size:var(--text-micro); color:var(--color-ink-muted);">lia.com · hello@lia.com</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact. — Design System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   IMPACT. DESIGN SYSTEM
+   Swiss-graphic industrial · Orange accent · Grid-compartmental
+   ============================================================ */
+
+:root {
+  /* Colors */
+  --color-accent:       #E84B0C;
+  --color-accent-dark:  #C23D08;
+  --color-ink:          #1A1A1A;
+  --color-ink-mid:      #3D3D3D;
+  --color-ink-muted:    #888888;
+  --color-surface:      #EBEBEB;
+  --color-card:         #FAFAFA;
+  --color-white:        #FFFFFF;
+  --color-border:       #1A1A1A;
+
+  /* Typography */
+  --font-display:  'Barlow Condensed', sans-serif;
+  --font-body:     'DM Sans', sans-serif;
+  --font-mono:     'DM Mono', monospace;
+
+  /* Text scale */
+  --text-display:  48px;
+  --text-heading:  22px;
+  --text-subhead:  17px;
+  --text-label:    12px;
+  --text-body:     14px;
+  --text-micro:    11px;
+
+  /* Spacing */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Structure */
+  --border-weight: 2px;
+  --radius-card:   14px;
+  --radius-inner:  0px;
+  --shadow-card:   0 8px 40px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.07);
+  --shadow-card-hover: 0 16px 56px rgba(0,0,0,0.15), 0 4px 16px rgba(0,0,0,0.10);
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+
+/* ── Page ───────────────────────────────────────────────── */
+body {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(232,75,12,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(26,26,26,0.03) 0%, transparent 50%);
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  min-height: 100vh;
+}
+
+/* ── DS Page Layout ─────────────────────────────────────── */
+.ds-page {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-6);
+}
+
+/* ── DS Page Header ─────────────────────────────────────── */
+.ds-page-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-8);
+  padding-bottom: var(--space-5);
+  border-bottom: var(--border-weight) solid var(--color-border);
+}
+
+.ds-logo {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.ds-logo .period { color: var(--color-accent); }
+
+.ds-tagline {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--color-ink-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Section ────────────────────────────────────────────── */
+.ds-section {
+  margin-bottom: var(--space-8);
+}
+
+.ds-section-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ds-section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(26,26,26,0.12);
+}
+
+/* ── Token Grid ─────────────────────────────────────────── */
+.token-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--space-3);
+}
+
+.token-swatch {
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-card);
+}
+
+.token-swatch__color {
+  height: 60px;
+}
+
+.token-swatch__info {
+  padding: var(--space-2) var(--space-3);
+}
+
+.token-swatch__name {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  margin-bottom: 2px;
+}
+
+.token-swatch__hex {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+/* ── Type Specimens ─────────────────────────────────────── */
+.type-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.type-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 8px;
+  padding: var(--space-4) var(--space-5);
+}
+
+.type-meta {
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.type-meta__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.type-meta__spec {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  margin-top: 2px;
+}
+
+.type-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(26,26,26,0.12);
+  flex-shrink: 0;
+}
+
+.type-sample { flex: 1; }
+
+/* ── Spacing Tokens ─────────────────────────────────────── */
+.space-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.space-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+}
+
+.space-bar-wrap {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.space-bar {
+  height: 12px;
+  background: var(--color-accent);
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+.space-meta {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--color-ink-muted);
+  width: 140px;
+  flex-shrink: 0;
+}
+
+/* ── Component Showcase ─────────────────────────────────── */
+.component-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.component-frame {
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.component-frame__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+  background: rgba(26,26,26,0.02);
+}
+
+.component-frame__preview {
+  padding: var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface);
+  min-height: 120px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CORE COMPONENTS
+   ───────────────────────────────────────────────────────── */
+
+/* ── Knob ───────────────────────────────────────────────── */
+.knob {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 40% 35%, rgba(255,255,255,0.85) 0%, transparent 55%),
+    conic-gradient(from 0deg,
+      #c0c0c0 0deg,
+      #f0f0f0 40deg,
+      #e0e0e0 80deg,
+      #ffffff 100deg,
+      #b8b8b8 130deg,
+      #d8d8d8 160deg,
+      #f5f5f5 200deg,
+      #e5e5e5 240deg,
+      #cccccc 280deg,
+      #f0f0f0 320deg,
+      #c0c0c0 360deg
+    );
+  box-shadow:
+    0 3px 12px rgba(0,0,0,0.28),
+    0 1px 4px rgba(0,0,0,0.15),
+    inset 0 1px 2px rgba(255,255,255,0.9),
+    inset 0 -1px 2px rgba(0,0,0,0.1);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+.knob::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(100,100,100,0.5);
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.knob:hover { transform: rotate(30deg); }
+
+.knob--small {
+  width: 48px;
+  height: 48px;
+}
+
+.knob--small::after {
+  width: 6px;
+  height: 6px;
+}
+
+/* ── Hatch Panel ────────────────────────────────────────── */
+.hatch-panel {
+  background-color: var(--color-accent);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(0,0,0,0.50) 4px,
+    rgba(0,0,0,0.50) 6px
+  );
+}
+
+.hatch-demo {
+  width: 100%;
+  height: 80px;
+  border-radius: 4px;
+}
+
+/* ── Score Block ────────────────────────────────────────── */
+.score-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.score-value {
+  font-family: var(--font-body);
+  font-size: var(--text-display);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.score-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-ink);
+  color: var(--color-white);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-block-wrap {
+  background: var(--color-accent);
+  padding: var(--space-5);
+  border-radius: 6px;
+  display: inline-flex;
+}
+
+/* ── Client Selector ────────────────────────────────────── */
+.client-selector {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: var(--border-weight) solid var(--color-border);
+}
+
+.client-nav {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-ink-mid);
+  padding: 0 var(--space-1);
+  line-height: 1;
+  transition: color 0.15s, transform 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.client-nav:hover {
+  color: var(--color-accent);
+  transform: scale(1.2);
+}
+
+.client-label {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--color-ink-muted);
+  letter-spacing: 0.04em;
+}
+
+.client-label strong {
+  color: var(--color-ink);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+/* ── Brand Header ───────────────────────────────────────── */
+.brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-white);
+  border-bottom: var(--border-weight) solid var(--color-border);
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--color-ink);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.brand-name .period { color: var(--color-accent); }
+
+/* ── Stat Card (Full) ───────────────────────────────────── */
+.stat-card {
+  width: 340px;
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.stat-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.stat-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-white);
+  border-bottom: var(--border-weight) solid var(--color-border);
+}
+
+.stat-card__body {
+  display: grid;
+  grid-template-columns: 38% 62%;
+}
+
+.stat-card__sidebar {
+  border-right: var(--border-weight) solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card__hatch {
+  flex: 1;
+  min-height: 80px;
+  background-color: var(--color-accent);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    rgba(0,0,0,0.50) 4px,
+    rgba(0,0,0,0.50) 6px
+  );
+}
+
+.stat-card__score-area {
+  flex: 1.2;
+  background: var(--color-accent);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5) var(--space-4);
+  gap: var(--space-3);
+}
+
+.stat-card__content {
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 220px;
+}
+
+.stat-card__client {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: auto;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+}
+
+.stat-card__title {
+  font-family: var(--font-body);
+  font-size: var(--text-heading);
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+.stat-card__desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+}
+
+/* ── Buttons ────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-3) var(--space-5);
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-ink);
+}
+
+.btn--secondary:hover {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.btn--ghost {
+  background: transparent;
+  border-color: rgba(26,26,26,0.2);
+  color: var(--color-ink-muted);
+}
+
+.btn--ghost:hover {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.btn-group {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+/* ── Badges / Chips ─────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.badge--accent {
+  background: var(--color-accent);
+  color: var(--color-white);
+}
+
+.badge--dark {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.badge--outline {
+  border: 1px solid rgba(26,26,26,0.25);
+  color: var(--color-ink-mid);
+  background: transparent;
+}
+
+.badge--muted {
+  background: rgba(26,26,26,0.07);
+  color: var(--color-ink-mid);
+}
+
+.badge-row {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* ── Metric Pill ────────────────────────────────────────── */
+.metric-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 6px;
+  padding: var(--space-3) var(--space-4);
+}
+
+.metric-pill__value {
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.metric-pill__accent { color: var(--color-accent); }
+
+.metric-pill__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}
+
+.metric-pill__divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(26,26,26,0.12);
+}
+
+/* ── Progress Bar ───────────────────────────────────────── */
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(26,26,26,0.1);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: 1px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-demo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.progress-row__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.progress-row__pct {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--color-ink-mid);
+  width: 32px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+/* ── Data Row ───────────────────────────────────────────── */
+.data-table {
+  width: 100%;
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table__row {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid rgba(26,26,26,0.08);
+  background: var(--color-card);
+  transition: background 0.12s;
+}
+
+.data-table__row:last-child { border-bottom: none; }
+.data-table__row:hover { background: rgba(232,75,12,0.04); }
+
+.data-table__row--header {
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.data-table__row--header:hover { background: var(--color-ink); }
+
+.data-table__cell {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-ink-mid);
+  flex: 1;
+}
+
+.data-table__cell--key {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--color-ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.data-table__cell--value {
+  font-weight: 500;
+  color: var(--color-ink);
+  text-align: right;
+}
+
+.data-table__cell--accent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.data-table__header-cell {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex: 1;
+}
+
+.data-table__header-cell--right { text-align: right; }
+
+/* ── Alert / Callout ────────────────────────────────────── */
+.callout {
+  display: flex;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-card);
+}
+
+.callout--accent {
+  border-color: var(--color-accent);
+  border-left-width: 4px;
+}
+
+.callout--dark {
+  background: var(--color-ink);
+  border-color: var(--color-ink);
+}
+
+.callout__icon {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+.callout__title {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 3px;
+}
+
+.callout--dark .callout__title { color: var(--color-white); }
+
+.callout__body {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+}
+
+.callout--dark .callout__body { color: rgba(255,255,255,0.5); }
+
+/* ── Tag Input / Chips ──────────────────────────────────── */
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-white);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--color-ink);
+  width: 100%;
+  transition: border-color 0.15s;
+}
+
+.input-field:focus-within {
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+.input-field__label {
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+}
+
+.input-field input {
+  border: none;
+  outline: none;
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  color: var(--color-ink);
+  background: transparent;
+  flex: 1;
+  letter-spacing: 0.04em;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CARD VARIANTS
+   ───────────────────────────────────────────────────────── */
+.card-variants {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* Mini card */
+.mini-card {
+  width: 200px;
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.mini-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.mini-card__top {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-white);
+  border-bottom: var(--border-weight) solid var(--color-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mini-card__logo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1;
+}
+
+.mini-card__logo span { color: var(--color-accent); }
+
+.mini-card__body {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  min-height: 120px;
+}
+
+.mini-card__sidebar {
+  border-right: var(--border-weight) solid var(--color-border);
+  background: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-card__num {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.mini-card__info {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mini-card__title {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  line-height: 1.2;
+  margin-bottom: var(--space-1);
+}
+
+.mini-card__sub {
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: var(--color-ink-muted);
+  line-height: 1.4;
+}
+
+/* ── Impact Reference Card (original design) ───────────── */
+.ref-card {
+  width: 340px;
+  background: var(--color-card);
+  border: var(--border-weight) solid var(--color-border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.ref-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+/* ─────────────────────────────────────────────────────────
+   PAGE ASSEMBLY
+   ───────────────────────────────────────────────────────── */
+</style>
+</head>
+<body>
+
+<div class="ds-page">
+
+  <!-- ── Page Header ─────────────────────────────────── -->
+  <header class="ds-page-header">
+    <div class="ds-logo">Impact<span class="period">.</span></div>
+    <div class="ds-tagline">Design System · v1.0</div>
+  </header>
+
+  <!-- ── Section: Reference Card ────────────────────── -->
+  <section class="ds-section">
+    <div class="ds-section-label">Reference Component</div>
+    <div style="display:flex; justify-content:center;">
+      <div class="ref-card">
+        <div class="stat-card__header">
+          <span class="brand-name">Impact<span class="period">.</span></span>
+          <div class="knob knob--small"></div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__sidebar">
+            <div class="stat-card__hatch"></div>
+            <div class="stat-card__score-area">
+              <span class="score-value">72</span>
+              <div class="score-badge">%</div>
+            </div>
+          </div>
+          <div class="stat-card__content">
+            <div class="stat-card__client">
+              <div class="client-selector" style="border:none; padding:0; flex:1;">
+                <button class="client-nav">←</button>
+                <span class="client-label">client: <strong>NOVA</strong></span>
+                <button class="client-nav">→</button>
+              </div>
+            </div>
+            <div class="stat-card__title">Campaign<br>Success</div>
+            <p class="stat-card__desc">Performance score and engagement statistics for Q2.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: Colors ───────────────────────────── -->
+  <section class="ds-section">
+    <div class="ds-section-label">Color Tokens</div>
+    <div class="token-grid">
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#E84B0C;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-accent</div>
+          <div class="token-swatch__hex">#E84B0C</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#C23D08;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-accent-dark</div>
+          <div class="token-swatch__hex">#C23D08</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#1A1A1A;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-ink</div>
+          <div class="token-swatch__hex">#1A1A1A</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#3D3D3D;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-ink-mid</div>
+          <div class="token-swatch__hex">#3D3D3D</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#888888;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-ink-muted</div>
+          <div class="token-swatch__hex">#888888</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#EBEBEB; border-bottom: 1px solid #ddd;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-surface</div>
+          <div class="token-swatch__hex">#EBEBEB</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#FAFAFA; border-bottom: 1px solid #ddd;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-card</div>
+          <div class="token-swatch__hex">#FAFAFA</div>
+        </div>
+      </div>
+      <div class="token-swatch">
+        <div class="token-swatch__color" style="background:#FFFFFF; border-bottom: 1px solid #ddd;"></div>
+        <div class="token-swatch__info">
+          <div class="token-swatch__name">--color-white</div>
+          <div class="token-swatch__hex">#FFFFFF</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: Typography ───────────────────────── -->
+  <section class="ds-section">
+    <div class="ds-section-label">Typography</div>
+    <div class="type-grid">
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__label">Display</div>
+          <div class="type-meta__spec">Barlow Condensed 700</div>
+        </div>
+        <div class="type-divider"></div>
+        <div class="type-sample">
+          <span style="font-family:'Barlow Condensed',sans-serif; font-size:42px; font-weight:700; line-height:1; color:var(--color-ink); letter-spacing:-1px;">Impact<span style="color:var(--color-accent)">.</span></span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__label">Heading</div>
+          <div class="type-meta__spec">DM Sans 700 · 22px</div>
+        </div>
+        <div class="type-divider"></div>
+        <div class="type-sample">
+          <span style="font-family:'DM Sans',sans-serif; font-size:22px; font-weight:700; color:var(--color-ink);">Campaign Success</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__label">Body</div>
+          <div class="type-meta__spec">DM Sans 400 · 14px</div>
+        </div>
+        <div class="type-divider"></div>
+        <div class="type-sample">
+          <span style="font-family:'DM Sans',sans-serif; font-size:14px; color:var(--color-ink-muted); line-height:1.55;">Performance score and engagement statistics for Q2.</span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__label">Mono Label</div>
+          <div class="type-meta__spec">DM Mono 400 · 12px</div>
+        </div>
+        <div class="type-divider"></div>
+        <div class="type-sample">
+          <span style="font-family:'DM Mono',monospace; font-size:12px; color:var(--color-ink-muted); letter-spacing:0.04em;">client: <strong style="color:var(--color-ink); letter-spacing:0.1em;">NOVA</strong></span>
+        </div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">
+          <div class="type-meta__label">Score</div>
+          <div class="type-meta__spec">DM Sans 700 · 48px</div>
+        </div>
+        <div class="type-divider"></div>
+        <div class="type-sample">
+          <span style="font-family:'DM Sans',sans-serif; font-size:48px; font-weight:700; color:var(--color-accent); line-height:1; letter-spacing:-2px;">72</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: Spacing ──────────────────────────── -->
+  <section class="ds-section">
+    <div class="ds-section-label">Spacing Scale</div>
+    <div class="space-grid">
+      <div class="space-row">
+        <div class="space-meta">--space-1 · 4px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:4px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-2 · 8px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:8px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-3 · 12px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:12px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-4 · 16px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:16px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-5 · 24px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:24px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-6 · 32px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:32px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-7 · 48px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:48px;"></div></div>
+      </div>
+      <div class="space-row">
+        <div class="space-meta">--space-8 · 64px</div>
+        <div class="space-bar-wrap"><div class="space-bar" style="width:64px;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: Atomic Components ───────────────── -->
+  <section class="ds-section">
+    <div class="ds-section-label">Atomic Components</div>
+    <div class="component-grid">
+
+      <!-- Knob -->
+      <div class="component-frame">
+        <div class="component-frame__label">Knob — Metallic</div>
+        <div class="component-frame__preview" style="gap:24px;">
+          <div class="knob"></div>
+          <div class="knob knob--small"></div>
+        </div>
+      </div>
+
+      <!-- Hatch Pattern -->
+      <div class="component-frame">
+        <div class="component-frame__label">Hatch Panel — Texture</div>
+        <div class="component-frame__preview">
+          <div class="hatch-demo hatch-panel"></div>
+        </div>
+      </div>
+
+      <!-- Score Block -->
+      <div class="component-frame">
+        <div class="component-frame__label">Score Block</div>
+        <div class="component-frame__preview">
+          <div class="score-block-wrap">
+            <div class="score-block">
+              <span class="score-value">72</span>
+              <div class="score-badge">%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Client Selector -->
+      <div class="component-frame">
+        <div class="component-frame__label">Client Selector</div>
+        <div class="component-frame__preview">
+          <div style="background:var(--color-card); border:2px solid var(--color-border); border-radius:6px; overflow:hidden; width:200px;">
+            <div class="client-selector">
+              <button class="client-nav">←</button>
+              <span class="client-label">client: <strong>NOVA</strong></span>
+              <button class="client-nav">→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="component-frame">
+        <div class="component-frame__label">Buttons</div>
+        <div class="component-frame__preview">
+          <div class="btn-group">
+            <button class="btn btn--primary">Primary</button>
+            <button class="btn btn--secondary">Secondary</button>
+            <button class="btn btn--ghost">Ghost</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="component-frame">
+        <div class="component-frame__label">Badges</div>
+        <div class="component-frame__preview">
+          <div class="badge-row">
+            <span class="badge badge--accent">Q2</span>
+            <span class="badge badge--dark">Active</span>
+            <span class="badge badge--outline">Draft</span>
+            <span class="badge badge--muted">Paused</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric Pills -->
+      <div class="component-frame">
+        <div class="component-frame__label">Metric Pill</div>
+        <div class="component-frame__preview" style="gap:12px; flex-direction:column;">
+          <div class="metric-pill">
+            <div class="metric-pill__value">72<span class="metric-pill__accent">%</span></div>
+            <div class="metric-pill__divider"></div>
+            <div class="metric-pill__label">Campaign<br>Score</div>
+          </div>
+          <div class="metric-pill">
+            <div class="metric-pill__value">4.2<span class="metric-pill__accent">x</span></div>
+            <div class="metric-pill__divider"></div>
+            <div class="metric-pill__label">Return<br>Rate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Progress Bars -->
+      <div class="component-frame">
+        <div class="component-frame__label">Progress Bars</div>
+        <div class="component-frame__preview">
+          <div class="progress-demo">
+            <div class="progress-row">
+              <div class="progress-row__label">Reach</div>
+              <div class="progress-bar" style="flex:1;"><div class="progress-bar__fill" style="width:72%;"></div></div>
+              <div class="progress-row__pct">72%</div>
+            </div>
+            <div class="progress-row">
+              <div class="progress-row__label">Engage</div>
+              <div class="progress-bar" style="flex:1;"><div class="progress-bar__fill" style="width:58%;"></div></div>
+              <div class="progress-row__pct">58%</div>
+            </div>
+            <div class="progress-row">
+              <div class="progress-row__label">Convert</div>
+              <div class="progress-bar" style="flex:1;"><div class="progress-bar__fill" style="width:34%;"></div></div>
+              <div class="progress-row__pct">34%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Callouts -->
+      <div class="component-frame">
+        <div class="component-frame__label">Callouts</div>
+        <div class="component-frame__preview" style="flex-direction:column; gap:12px; align-items:stretch; padding:16px;">
+          <div class="callout callout--accent">
+            <div class="callout__icon">!</div>
+            <div>
+              <div class="callout__title">Score threshold reached</div>
+              <div class="callout__body">NOVA exceeded the Q2 benchmark by 12 points.</div>
+            </div>
+          </div>
+          <div class="callout callout--dark">
+            <div class="callout__icon" style="color:var(--color-accent);">→</div>
+            <div>
+              <div class="callout__title">Campaign complete</div>
+              <div class="callout__body">Final report is ready to export.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Fields -->
+      <div class="component-frame">
+        <div class="component-frame__label">Input Fields</div>
+        <div class="component-frame__preview" style="align-items:stretch; padding:16px;">
+          <div class="input-group">
+            <div class="input-field">
+              <span class="input-field__label">client:</span>
+              <input type="text" placeholder="NOVA" />
+            </div>
+            <div class="input-field">
+              <span class="input-field__label">period:</span>
+              <input type="text" placeholder="Q2 2026" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data Table -->
+      <div class="component-frame" style="grid-column: span 2;">
+        <div class="component-frame__label">Data Table</div>
+        <div class="component-frame__preview" style="padding:0; background:transparent;">
+          <div class="data-table" style="border-radius:0; border:none;">
+            <div class="data-table__row data-table__row--header">
+              <div class="data-table__header-cell">Metric</div>
+              <div class="data-table__header-cell">Period</div>
+              <div class="data-table__header-cell--right data-table__header-cell">Score</div>
+              <div class="data-table__header-cell--right data-table__header-cell">Status</div>
+            </div>
+            <div class="data-table__row">
+              <div class="data-table__cell data-table__cell--key">Reach</div>
+              <div class="data-table__cell">Q2 2026</div>
+              <div class="data-table__cell data-table__cell--value data-table__cell--accent">72%</div>
+              <div class="data-table__cell data-table__cell--value" style="text-align:right;"><span class="badge badge--accent">Active</span></div>
+            </div>
+            <div class="data-table__row">
+              <div class="data-table__cell data-table__cell--key">Engage</div>
+              <div class="data-table__cell">Q2 2026</div>
+              <div class="data-table__cell data-table__cell--value">58%</div>
+              <div class="data-table__cell data-table__cell--value" style="text-align:right;"><span class="badge badge--outline">Draft</span></div>
+            </div>
+            <div class="data-table__row">
+              <div class="data-table__cell data-table__cell--key">Convert</div>
+              <div class="data-table__cell">Q1 2026</div>
+              <div class="data-table__cell data-table__cell--value">34%</div>
+              <div class="data-table__cell data-table__cell--value" style="text-align:right;"><span class="badge badge--muted">Paused</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section: Card Variants ───────────────────── -->
+  <section class="ds-section">
+    <div class="ds-section-label">Card Variants</div>
+    <div class="card-variants">
+
+      <!-- Full stat card -->
+      <div class="stat-card">
+        <div class="stat-card__header">
+          <span class="brand-name">Impact<span class="period">.</span></span>
+          <div class="knob knob--small"></div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__sidebar">
+            <div class="stat-card__hatch"></div>
+            <div class="stat-card__score-area">
+              <span class="score-value">91</span>
+              <div class="score-badge">%</div>
+            </div>
+          </div>
+          <div class="stat-card__content">
+            <div class="stat-card__client">
+              <div class="client-selector" style="border:none; padding:0; flex:1;">
+                <button class="client-nav">←</button>
+                <span class="client-label">client: <strong>APEX</strong></span>
+                <button class="client-nav">→</button>
+              </div>
+            </div>
+            <div class="stat-card__title">Audience<br>Growth</div>
+            <p class="stat-card__desc">Follower acquisition and retention data for Q3.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini cards -->
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div class="mini-card">
+          <div class="mini-card__top">
+            <div class="mini-card__logo">Impact<span>.</span></div>
+            <span class="badge badge--accent">Q2</span>
+          </div>
+          <div class="mini-card__body">
+            <div class="mini-card__sidebar"><div class="mini-card__num">88</div></div>
+            <div class="mini-card__info">
+              <div class="mini-card__title">Brand Lift</div>
+              <div class="mini-card__sub">Q2 awareness score</div>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card">
+          <div class="mini-card__top">
+            <div class="mini-card__logo">Impact<span>.</span></div>
+            <span class="badge badge--dark">Live</span>
+          </div>
+          <div class="mini-card__body">
+            <div class="mini-card__sidebar hatch-panel" style="align-items:center; justify-content:center; display:flex;"><div class="mini-card__num">64</div></div>
+            <div class="mini-card__info">
+              <div class="mini-card__title">CTR Rate</div>
+              <div class="mini-card__sub">Click-through avg.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dark variant -->
+      <div class="stat-card" style="background:var(--color-ink); border-color:var(--color-ink);">
+        <div class="stat-card__header" style="background:var(--color-ink); border-bottom-color:rgba(255,255,255,0.1);">
+          <span class="brand-name" style="color:var(--color-white);">Impact<span class="period">.</span></span>
+          <div class="knob knob--small"></div>
+        </div>
+        <div class="stat-card__body">
+          <div class="stat-card__sidebar" style="border-right-color:rgba(255,255,255,0.1);">
+            <div class="stat-card__hatch" style="opacity:0.7;"></div>
+            <div class="stat-card__score-area">
+              <span class="score-value">47</span>
+              <div class="score-badge">%</div>
+            </div>
+          </div>
+          <div class="stat-card__content">
+            <div class="stat-card__client" style="border-bottom-color:rgba(255,255,255,0.08);">
+              <div class="client-selector" style="border:none; padding:0; flex:1;">
+                <button class="client-nav" style="color:rgba(255,255,255,0.4);">←</button>
+                <span class="client-label" style="color:rgba(255,255,255,0.4);">client: <strong style="color:white;">FLUX</strong></span>
+                <button class="client-nav" style="color:rgba(255,255,255,0.4);">→</button>
+              </div>
+            </div>
+            <div class="stat-card__title" style="color:white;">Conversion<br>Rate</div>
+            <p class="stat-card__desc" style="color:rgba(255,255,255,0.4);">Sales funnel performance for current quarter.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer style="margin-top:var(--space-8); padding-top:var(--space-5); border-top:2px solid var(--color-border); display:flex; justify-content:space-between; align-items:center;">
+    <span class="ds-logo" style="font-size:24px;">Impact<span class="period">.</span></span>
+    <span class="ds-tagline">Design System · Swiss-Industrial · 2026</span>
+  </footer>
+
+</div>
+</body>
+</html>
